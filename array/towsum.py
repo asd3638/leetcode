@@ -1,4 +1,4 @@
-# 
+# brute force
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         len_list = len(nums)
@@ -11,3 +11,13 @@ class Solution:
                     return [i, j]
             #print(i)
         return [] 
+    
+# hash map
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        num_map = {}
+        for i, num in enumerate(nums):
+            vo = target - num
+            if vo in num_map:
+                return [num_map[vo], i]
+            num_map[num] = i
