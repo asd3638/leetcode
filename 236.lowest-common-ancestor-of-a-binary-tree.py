@@ -79,8 +79,8 @@ class Solution:
                 return
 
             # 현재 경로를 새로운 리스트로 전달 (복사)
-            new_path = path + [node.val]
-            print(new_path)
+            new_path = path + [node]
+            # print(new_path)
 
             if node == p:
                 self.p_anc = new_path  # p의 경로 저장
@@ -92,8 +92,8 @@ class Solution:
 
         dfs(root, [])
 
-        print("p의 조상 노드들:", [node.val for node in self.p_anc])
-        print("q의 조상 노드들:", [node.val for node in self.q_anc])
+        # print("p의 조상 노드들:", [node.val for node in self.p_anc])
+        # print("q의 조상 노드들:", [node.val for node in self.q_anc])
 
         # 뒤에서부터 공통된 조상을 찾음
         for i in self.p_anc[::-1]:  # 뒤에서부터 순회
